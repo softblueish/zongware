@@ -5,3 +5,5 @@
 int windowSize[2] = {640, 480};
 
 const char* title = "Game";
+
+int framerate = 60;
