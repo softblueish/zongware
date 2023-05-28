@@ -1,13 +1,15 @@
 #ifndef GRAPHICS_HPP
 #include "../headers/graphics.hpp"
 #endif
+#ifndef PROPERTIES_HPP
+#include "../game/headers/properties.hpp"
+#endif
 SDL_Window* window;
 SDL_Renderer* renderer;
 SDL_Texture* texture;
 SDL_Rect rect;
-int windowSize[2] = {640, 480};
 
-void startGraphics(const char* title){
+void startGraphics(){
     SDL_Init(SDL_INIT_EVERYTHING);
     window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowSize[0], windowSize[1], SDL_WINDOW_SHOWN);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -16,7 +18,7 @@ void startGraphics(const char* title){
 void restartGraphics(const char* title){
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
-    startGraphics(title);
+    startGraphics();
 }
 
 void renderGraphics(std::vector<Entity*> *stack){

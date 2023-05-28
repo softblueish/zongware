@@ -5,6 +5,7 @@
 void Entity::load(std::vector<Entity*> *stack){
     id = stack->size();
     stack->push_back(this);
+    if(surface!=NULL) return;
     surface = SDL_LoadBMP(sourcePath.c_str());
 }
 

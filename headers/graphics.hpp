@@ -7,9 +7,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 
-void startGraphics(const char* title);
+void startGraphics();
 
-void restartGraphics(const char* title);
+void restartGraphics();
 
 void renderGraphics(std::vector<Entity*> *stack);
 

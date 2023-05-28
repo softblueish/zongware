@@ -25,6 +25,7 @@ class Entity{
             this->h = h;
             this->sourcePath = sourcePath;
         }
+        
         Entity(std::string identifier, char type, int x, int y, int w, int h){
             this->identifier = identifier;
             this->type = type;
