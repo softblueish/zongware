@@ -2,9 +2,9 @@
 Zongware is a lightweight SDL and C++ game engine that compiles alongside your game. It aims to provide a low-level and user-friendly alternative to complex game engine UIs, without requiring in-depth knowledge of computer graphics.
 
 ## Features
-- Inspired by Arduino, Zongware utilizes the start() and loop() loop blocks by default to execute the game code.
-- All source code is expected to be added under the game/ folder, with the main two blocks located in game/src/game.cpp.
-- Window settings, vsync, and other configurations can be adjusted in game/headers/properties.hpp.
+- Inspired by Arduino, Zongware utilizes the ``start()`` and ``loop()`` loop blocks by default to execute the game code.
+- All source code is expected to be added under the ``game/`` folder, with the main two blocks located in game/src/game.cpp.
+- Window settings, vsync, and other configurations can be adjusted in ``game/headers/properties.hpp``.
 
 ## Compiling
 To compile the Zongware game engine and your game, follow these steps:
