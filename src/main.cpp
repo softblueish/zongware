@@ -1,8 +1,8 @@
 #ifndef GAME_HPP
-#include "../headers/game.hpp"
+#include <zongware/game.hpp>
 #endif
 #ifndef THREADS_HPP
-#include "../headers/threads.hpp"
+#include <zongware/threads.hpp>
 #endif
 
 std::vector<Entity*> stack;
@@ -15,10 +15,10 @@ void gameloop(){
 }
 
 int main(){
-    startGraphics();
-    
     start(&stack);
 
+    startGraphics();
+    
     std::thread gameloopThread = std::thread(gameloop);
     gameloopThread.detach();
 

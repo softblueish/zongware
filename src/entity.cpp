@@ -1,11 +1,11 @@
 #ifndef ENTITY_HPP
-#include "../headers/entity.hpp"
+#include <zongware/entity.hpp>
 #endif
 #ifndef GRAPHICS_HPP
-#include "../headers/graphics.hpp"
+#include <zongware/graphics.hpp>
 #endif
 #ifndef THREADS_HPP
-#include "../headers/threads.hpp"
+#include <zongware/threads.hpp>
 #endif
 
 void Entity::load(std::vector<Entity*> *stack){

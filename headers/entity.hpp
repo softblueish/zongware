@@ -2,7 +2,7 @@
 #define ENTITY_HPP
 #endif
 #ifndef THREADS_HPP
-#include "../headers/threads.hpp"
+#include <zongware/threads.hpp>
 #endif
 #include <vector>
 #include <iostream>

@@ -1,5 +1,5 @@
 #ifndef INPUT_HPP
-#include "../headers/input.hpp"
+#include <zongware/input.hpp>
 #endif
 
 bool checkInput(SDL_Keycode key){

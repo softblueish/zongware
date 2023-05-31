@@ -2,7 +2,7 @@
 #define GRAPHICS_HPP
 #endif
 #ifndef ENTITY_HPP
-#include "../headers/entity.hpp"
+#include <zongware/entity.hpp>
 #endif
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>

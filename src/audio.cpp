@@ -1,5 +1,5 @@
 #ifndef AUDIO_HPP
-#include "../headers/audio.hpp"
+#include <zongware/audio.hpp>
 #endif
 
 std::vector<Mix_Music*> music;
