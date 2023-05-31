@@ -1,9 +1,6 @@
 #ifndef GRAPHICS_HPP
 #include "../headers/graphics.hpp"
 #endif
-#ifndef PROPERTIES_HPP
-#include "../game/headers/properties.hpp"
-#endif
 #ifndef AUDIO_HPP
 #include "../headers/audio.hpp"
 #endif
@@ -16,15 +13,37 @@ SDL_Renderer* renderer;
 
 SDL_Rect rect;
 
+int windowSize[2] = {640, 480};
+std::string title = "Game";
+int framerate = 60;
+bool vsync = true;
+
+void setWindowSize(int width, int height){
+    windowSize[0] = width;
+    windowSize[1] = height;
+}
+
+void setTitle(std::string t){
+    title = t;
+}
+
+void setFramerate(int f){
+    framerate = f;
+}
+
+void setVsync(bool v){
+    vsync = v;
+}
+
 void startGraphics(){
     SDL_Init(SDL_INIT_EVERYTHING);
     Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096);
-    window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowSize[0], windowSize[1], SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowSize[0], windowSize[1], SDL_WINDOW_SHOWN);
     if(vsync) renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED || SDL_RENDERER_PRESENTVSYNC);
     else renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
-void restartGraphics(const char* title){
+void restartGraphics(){
     Mix_CloseAudio();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

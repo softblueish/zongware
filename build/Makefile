@@ -1,8 +1,6 @@
-all: entity.o graphics.o input.o main.o threads.o audio.o standard.o game.o game
-test: entity.o graphics.o input.o main.o threads.o audio.o standard.o game.o game run clean
-custom: 
-
-# GAME ENGINE FILES START
+all: entity.o graphics.o input.o main.o threads.o audio.o standard.o game.o normal
+shared: entity.o graphics.o input.o main.o threads.o audio.o standard.o library
+test: entity.o graphics.o input.o main.o threads.o audio.o standard.o game run clean
 
 entity.o:
 	g++ -c ../src/entity.cpp -o entity.o
@@ -21,10 +19,11 @@ standard.o:
 game.o:
 	g++ -c ../game/src/game.cpp -o game.o
 
-# GAME ENGINE FILES END
-
-game:
+normal:
 	g++ game.o threads.o standard.o audio.o input.o entity.o graphics.o main.o -o game -lSDL2 -lSDL2_image -lSDL2_gfx -lSDL2_mixer
+
+library:
+	g++ threads.o standard.o audio.o input.o entity.o graphics.o main.o -o game -lSDL2 -lSDL2_image -lSDL2_gfx -lSDL2_mixer -shared -fPIC
 
 run:
 	./game
