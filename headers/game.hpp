@@ -10,6 +10,17 @@
 #ifndef ENTITY_HPP
 #include "../headers/entity.hpp"
 #endif
+#ifndef AUDIO_HPP
+#include "../headers/audio.hpp"
+#endif
+#ifndef THREADS_HPP
+#include "../headers/threads.hpp"
+#endif
+#ifndef STANDARD_HPP
+#include "../headers/standard.hpp"
+#endif
+#include <thread>
+#include <iostream>
 
 
 void start(std::vector<Entity*> *stack);

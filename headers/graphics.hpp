@@ -11,7 +11,7 @@ void startGraphics();
 
 void restartGraphics();
 
-SDL_Texture* createTexture(SDL_Surface* surface);
+SDL_Texture* createDefaultTexture(SDL_Surface* surface);
 
 void renderGraphics(std::vector<Entity*> *stack);
 
