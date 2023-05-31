@@ -33,3 +33,10 @@ Contributions to Zongware are welcome! If you encounter any issues or have sugge
 
 ## License
 Zongware is licensed under the **MIT License**. See the ``LICENSE`` file for more information.
+
+## Special thanks
+Zongware is named after my friend Zong, here is a message courtesy of Zong
+```
+## Cherrity
+A portion of this video is sponsored by Cherrity. Cherrity is your one stop platform for obtaining food, giving out (potentially poisonous) food and services that aren't food. Download Cherrity today and get 5 free meals with the coupon code CHERRITYMAX2023.
+```
