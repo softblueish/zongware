@@ -1,11 +1,11 @@
 #ifndef GRAPHICS_HPP
-#include "../headers/graphics.hpp"
+#include <zongware/graphics.hpp>
 #endif
 #ifndef AUDIO_HPP
-#include "../headers/audio.hpp"
+#include <zongware/audio.hpp>
 #endif
 #ifndef THREADS_HPP
-#include "../headers/threads.hpp"
+#include <zongware/threads.hpp>
 #endif
 
 SDL_Window* window;

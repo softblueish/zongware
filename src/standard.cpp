@@ -1,8 +1,8 @@
 #ifndef STANDARD_HPP
-#include "../headers/standard.hpp"
+#include <zongware/standard.hpp>
 #endif
 #ifndef GAME_HPP
-#include "../headers/game.hpp"
+#include <zongware/game.hpp>
 #endif
 
 void delay(int ms){

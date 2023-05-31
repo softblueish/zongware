@@ -1,5 +1,5 @@
 #ifndef THREADS_HPP
-#include "../headers/threads.hpp"
+#include <zongware/threads.hpp>
 #endif
 
 

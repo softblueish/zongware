@@ -2,22 +2,22 @@
 #define GAME_HPP
 #endif
 #ifndef GRAPHICS_HPP
-#include "../headers/graphics.hpp"
+#include <zongware/graphics.hpp>
 #endif
 #ifndef INPUT_HPP
-#include "../headers/input.hpp"
+#include <zongware/input.hpp>
 #endif
 #ifndef ENTITY_HPP
-#include "../headers/entity.hpp"
+#include <zongware/entity.hpp>
 #endif
 #ifndef AUDIO_HPP
-#include "../headers/audio.hpp"
+#include <zongware/audio.hpp>
 #endif
 #ifndef THREADS_HPP
-#include "../headers/threads.hpp"
+#include <zongware/threads.hpp>
 #endif
 #ifndef STANDARD_HPP
-#include "../headers/standard.hpp"
+#include <zongware/standard.hpp>
 #endif
 #include <thread>
 #include <iostream>
