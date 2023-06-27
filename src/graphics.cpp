@@ -18,7 +18,7 @@ SDL_Rect rect;
 
 int windowSize[2] = {640, 480};
 std::string title = "Game";
-int framerate = 60;
+int framerate = 0;
 bool vsync = true;
 
 int mouseX, mouseY;
