@@ -16,8 +16,6 @@ void gameloop(){
 
 int main(){
     start(&stack);
-
-    startGraphics();
     
     std::thread gameloopThread = std::thread(gameloop);
     gameloopThread.detach();

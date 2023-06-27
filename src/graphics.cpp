@@ -7,6 +7,9 @@
 #ifndef THREADS_HPP
 #include <zongware/threads.hpp>
 #endif
+#ifndef ENTITY_HPP
+#include <zongware/entity.hpp>
+#endif
 
 SDL_Window* window;
 SDL_Renderer* renderer;
@@ -15,8 +18,29 @@ SDL_Rect rect;
 
 int windowSize[2] = {640, 480};
 std::string title = "Game";
-int framerate = 60;
+int framerate = 0;
 bool vsync = true;
+
+int mouseX, mouseY;
+int mousedX, mousedY;
+int mouseState;
+
+mouse getMouse(){
+    mouse m = {mouseX, mouseY, mousedX, mousedY, mouseState};
+    return m;
+}
+
+bool Entity::mouseIsPressing(){
+    int mouseX, mouseY;
+    if(SDL_GetMouseState(&mouseX, &mouseY)!=1) return false;
+    return mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h;
+}
+
+bool Entity::mouseIsHovering(){
+    int mouseX, mouseY;
+    SDL_GetMouseState(&mouseX, &mouseY);
+    return mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h;
+}
 
 void setWindowSize(int width, int height){
     windowSize[0] = width;
@@ -50,17 +74,24 @@ void restartGraphics(){
     startGraphics();
 }
 
-SDL_Texture* createDefaultTexture(SDL_Surface* surface) {
-    return SDL_CreateTextureFromSurface(renderer, surface);
+SDL_Texture* createDefaultTexture(SDL_Surface* surface){
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    return texture;
 }
 
 void renderGraphics(std::vector<Entity*> *stack){
-    int maxLayers;
+    int maxLayers = 0;
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     while(isStackInUse());
     setStackInUse(true);
-    for(int entityID = 0; entityID < stack->size(); entityID++) if(stack->at(entityID)->layer>maxLayers) maxLayers = stack->at(entityID)->layer;
+    SDL_GetMouseState(&mouseX, &mouseY);
+    mouseState = SDL_GetRelativeMouseState(&mousedX, &mousedY);
+    for(int entityID = 0; entityID < stack->size(); entityID++) {
+        if(stack->at(entityID)->layer > maxLayers) {
+            maxLayers = stack->at(entityID)->layer;
+        }
+    }
     for(int layer = maxLayers; layer > -1; layer--){
         for(int entityID = 0; entityID < stack->size(); entityID++){
             if(!stack->at(entityID)->visible) continue;
@@ -89,7 +120,7 @@ void renderGraphics(std::vector<Entity*> *stack){
     }
     setStackInUse(false);
     SDL_RenderPresent(renderer);
-    SDL_Delay(1000 / framerate);
+    if(framerate>0) SDL_Delay(1000 / framerate);
 }
 
 void endGraphics(){
