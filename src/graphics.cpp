@@ -120,7 +120,7 @@ void renderGraphics(std::vector<Entity*> *stack){
     }
     setStackInUse(false);
     SDL_RenderPresent(renderer);
-    SDL_Delay(1000 / framerate);
+    if(framerate>0) SDL_Delay(1000 / framerate);
 }
 
 void endGraphics(){
