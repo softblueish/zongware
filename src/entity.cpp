@@ -17,6 +17,10 @@ void Entity::load(std::vector<Entity*> *stack){
     surface = SDL_LoadBMP(sourcePath.c_str());
     texture = createDefaultTexture(surface);
     setStackInUse(false);
+    if(texture==NULL){
+        std::cout << "Failed to create texture from path " << sourcePath << "! (";
+        std::cout << stack->at(id) << ")" << std::endl;
+    }
     if(surface==NULL){
         std::cout << "Failed to load " << sourcePath << "! (";
         std::cout << stack->at(id) << ")" << std::endl;

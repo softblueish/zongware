@@ -66,6 +66,11 @@ class Entity{
             for(int i = 0; i < 4; i++) this->color[i] = color[i];
         }
 
+        // Checks
+        bool mouseIsPressing();
+        
+        bool mouseIsHovering();
+
         // Sets variables
         void setLayer(unsigned int layer){
             while(isStackInUse());
